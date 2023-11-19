@@ -1,9 +1,9 @@
 // Importing controllers to handle routes
-const { GetAllWrestlers } = require('../Controllers/GetAllWrestlers');
-const { GetWrestlerById } = require('../Controllers/GetWrestlerById'); 
+const { GetAllWrestlers, GetWrestlerById } = require('../Controllers/GetWrestlers');
 
 const router = require('express').Router();
 
+// Routes
 router.get('/wrestlers/', GetAllWrestlers);
 router.get('/wrestler/:id', GetWrestlerById);
 

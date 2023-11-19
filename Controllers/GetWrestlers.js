@@ -10,9 +10,9 @@ module.exports.GetAllWrestlers = (req, res) => {
 };
 
 module.exports.GetWrestlerById = (req, res) => {
-    const id = parseInt(request.params.id);
+    const id = parseInt(req.params.id);
 
-    pool.query(`SELECT * FROM pro_wrestlers WHERE id = $1`, [id], (error, results) => {
+    pool.query(`SELECT * FROM pro_wrestler WHERE wrestler_id = $1`, [id], (error, results) => {
         if(error) {
             throw error;
         }

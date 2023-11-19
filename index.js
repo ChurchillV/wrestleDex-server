@@ -22,6 +22,7 @@ app.listen(PORT, () => {
     console.log(`WrestleDex server is live on port ${ PORT }`)
 });
 
+// Express request handlers
 app.use('/', getAllWrestlers);
 app.use('/', updateWrestlers);
 app.use('/', deleteWrestlers);
