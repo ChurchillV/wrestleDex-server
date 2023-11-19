@@ -7,7 +7,9 @@ require('dotenv').config();
 const { PORT } = process.env;
 
 // Routes to handle requests
-const responseRoute = require('./Routes/GetRoutes');
+const getAllWrestlers = require('./Routes/GetRoutes');
+const updateWrestlers = require('./Routes/PutRoutes');
+const deleteWrestlers = require('./Routes/DeleteRoutes');
 
 app.use(bodyParser.json())
 app.use(
@@ -20,5 +22,6 @@ app.listen(PORT, () => {
     console.log(`WrestleDex server is live on port ${ PORT }`)
 });
 
-app.use('/', responseRoute);
-
+app.use('/', getAllWrestlers);
+app.use('/', updateWrestlers);
+app.use('/', deleteWrestlers);
