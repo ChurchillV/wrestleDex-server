@@ -7,9 +7,10 @@ require('dotenv').config();
 const { PORT } = process.env;
 
 // Routes to handle requests
-const getAllWrestlers = require('./Routes/GetRoutes');
+const getWrestlers = require('./Routes/GetRoutes');
 const updateWrestlers = require('./Routes/PutRoutes');
 const deleteWrestlers = require('./Routes/DeleteRoutes');
+const postWrestlers = require('./Routes/PostRoutes');
 
 app.use(bodyParser.json())
 app.use(
@@ -23,6 +24,7 @@ app.listen(PORT, () => {
 });
 
 // Express request handlers
-app.use('/', getAllWrestlers);
+app.use('/delete', deleteWrestlers);
+app.use('/', getWrestlers);
 app.use('/', updateWrestlers);
-app.use('/', deleteWrestlers);
+app.use('/', postWrestlers);

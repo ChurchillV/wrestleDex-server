@@ -12,7 +12,7 @@ module.exports.PostNewWrestler = (req, res) => {
         bio,
     } = req.body;
 
-    pool.query(`INSERT INTO pro_wrestlers(
+    pool.query(`INSERT INTO pro_wrestler(
                  wrestler_id,
                  wrestler_name,
                  promotion_id,
@@ -20,7 +20,9 @@ module.exports.PostNewWrestler = (req, res) => {
                  allegiance_id,
                  style_id,
                  finisher_id,
-                 bio) RETURNING *`,
+                 bio) VALUES(
+                    $1, $2, $3, $4, $5, $6, $7, $8 
+                 ) RETURNING *`,
                  [id,
                  name,
                  promotion_id,
@@ -33,6 +35,5 @@ module.exports.PostNewWrestler = (req, res) => {
                         throw error;
                     }
                     res.status(201).send(`Wrestler ${name} uploaded successfully`)
-                       .json(results.rows);
-                 } )
+                 })
 }
