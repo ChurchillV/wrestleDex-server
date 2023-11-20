@@ -1,10 +1,10 @@
 const { pool } = require('../Config/db');
 
 module.exports.UpdateWrestlerName = (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id.slice(1));
     const { name } = req.body;
 
-    pool.query(`UPDATE pro_wrestlers SET wrestler_name = $1 WHERE wrestler_id = $2`, [name, id], (error, results) => {
+    pool.query(`UPDATE pro_wrestler SET wrestler_name = $1 WHERE wrestler_id = $2`, [name, id], (error, results) => {
         if(error) {
             throw error;
         }
@@ -13,10 +13,10 @@ module.exports.UpdateWrestlerName = (req, res) => {
 }
 
 module.exports.UpdateWrestlerPromotion = (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id.slice(1));
     const { promotion } = req.body;
 
-    pool.query(`UPDATE pro_wrestlers SET promotion_id = $1 WHERE wrestler_id = $2`, [promotion, id], (error, results) => {
+    pool.query(`UPDATE pro_wrestler SET promotion_id = $1 WHERE wrestler_id = $2`, [promotion, id], (error, results) => {
         if(error) {
             throw error;
         }
@@ -25,10 +25,10 @@ module.exports.UpdateWrestlerPromotion = (req, res) => {
 }
 
 module.exports.UpdateWrestlerAllegiance = (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id.slice(1));
     const { allegiance } = req.body;
 
-    pool.query(`UPDATE pro_wrestlers SET allegiance_id = $1 WHERE wrestler_id = $2`, [allegiance, id], (error, results) => {
+    pool.query(`UPDATE pro_wrestler SET allegiance_id = $1 WHERE wrestler_id = $2`, [allegiance, id], (error, results) => {
         if(error) {
             throw error;
         }
@@ -37,10 +37,10 @@ module.exports.UpdateWrestlerAllegiance = (req, res) => {
 }
 
 module.exports.UpdateWrestlerStyle = (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id.slice(1));
     const { style } = req.body;
 
-    pool.query(`UPDATE pro_wrestlers SET style_id = $1 WHERE wrestler_id = $2`, [style, id], (error, results) => {
+    pool.query(`UPDATE pro_wrestler SET style_id = $1 WHERE wrestler_id = $2`, [style, id], (error, results) => {
         if(error) {
             throw error;
         }
@@ -49,10 +49,10 @@ module.exports.UpdateWrestlerStyle = (req, res) => {
 }
 
 module.exports.UpdateWrestlerFinisher = (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id.slice(1));
     const { finisher } = req.body;
 
-    pool.query(`UPDATE pro_wrestlers SET finisher_id = $1 WHERE wrestler_id = $2`, [finisher, id], (error, results) => {
+    pool.query(`UPDATE pro_wrestler SET finisher_id = $1 WHERE wrestler_id = $2`, [finisher, id], (error, results) => {
         if(error) {
             throw error;
         }
@@ -61,10 +61,10 @@ module.exports.UpdateWrestlerFinisher = (req, res) => {
 }
 
 module.exports.UpdateWrestlerBio = (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id.slice(1));
     const { bio } = req.body;
 
-    pool.query(`UPDATE pro_wrestlers SET bio = $1 WHERE wrestler_id = $2`, [bio, id], (error, results) => {
+    pool.query(`UPDATE pro_wrestler SET bio = $1 WHERE wrestler_id = $2`, [bio, id], (error, results) => {
         if(error) {
             throw error;
         }
