@@ -34,6 +34,7 @@ module.exports.PostNewWrestler = (req, res) => {
                     if(error) {
                         throw error;
                     }
-                    res.status(201).send(`Wrestler ${name} uploaded successfully`)
+                    res.status(201).send(`Wrestler ${name} uploaded successfully`);
+                    console.log(`Wrestler ${name} uploaded successfully`);
                  })
 }

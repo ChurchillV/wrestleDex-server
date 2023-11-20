@@ -9,6 +9,7 @@ module.exports.UpdateWrestlerName = (req, res) => {
             throw error;
         }
         res.status(200).send(`Wrestler ${id} name updated successfully`);
+        console.log(`Wrestler ${id} name updated successfully`);
     });
 }
 
@@ -21,6 +22,7 @@ module.exports.UpdateWrestlerPromotion = (req, res) => {
             throw error;
         }
         res.status(200).send(`Wrestler ${id} promotion updated successfully`);
+        console.log(`Wrestler ${id} promotion updated successfully`);
     });
 }
 
@@ -33,6 +35,7 @@ module.exports.UpdateWrestlerAllegiance = (req, res) => {
             throw error;
         }
         res.status(200).send(`Wrestler ${id} allegiance updated successfully`);
+        console.log(`Wrestler ${id} allegiance updated successfully`);
     });
 }
 
@@ -45,6 +48,7 @@ module.exports.UpdateWrestlerStyle = (req, res) => {
             throw error;
         }
         res.status(200).send(`Wrestler ${id} style updated successfully`);
+        console.log(`Wrestler ${id} style updated successfully`);
     });
 }
 
@@ -57,6 +61,7 @@ module.exports.UpdateWrestlerFinisher = (req, res) => {
             throw error;
         }
         res.status(200).send(`Wrestler ${id} finisher updated successfully`);
+        console.log(`Wrestler ${id} finisher updated successfully`);
     });
 }
 
@@ -69,5 +74,6 @@ module.exports.UpdateWrestlerBio = (req, res) => {
             throw error;
         }
         res.status(200).send(`Wrestler ${id} bio updated successfully`);
+        console.log(`Wrestler ${id} bio updated successfully`);
     });
 }
