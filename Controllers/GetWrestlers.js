@@ -1,8 +1,8 @@
 const { pool } = require('../Config/db');
-const { WrestlerProfileQueries } = require('../Queries/SelectWrestler');
+const { WrestlerProfileQueries } = require('../Queries/WrestleProfileQueries');
 
 module.exports.GetAllWrestlers = (req, res) => {
-    pool.query(`SELECT * FROM pro_wrestler ORDER BY wrestler_id`, (error, results) => {
+    pool.query(WrestlerProfileQueries.getAllWrestlers, (error, results) => {
         if(error) {
             throw error;
         }
@@ -18,8 +18,14 @@ module.exports.GetWrestlerById = (req, res) => {
         if(error) {
             throw error;
         }
-        res.status(200).json(results.rows);
-        console.log(`Wrestler ${id} returned successfully`);
+
+        if(results.rows.length == 0) {
+            res.status(404).json({message : `No wrestler with id ${id} found`});
+            console.log(`Search for wrestler with id ${id} failed`);
+        } else {
+            res.status(200).json(results.rows);
+            console.log(`Wrestler ${id} returned successfully`);            
+        }
     })
 }
 

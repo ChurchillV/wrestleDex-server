@@ -1,10 +1,11 @@
 const { pool } = require('../Config/db');
+const { WrestlerUpdateQueries } = require('../Queries/WrestlerUpdateQueries');
 
 module.exports.UpdateWrestlerName = (req, res) => {
     const id = parseInt(req.params.id.slice(1));
     const { name } = req.body;
 
-    pool.query(`UPDATE pro_wrestler SET wrestler_name = $1 WHERE wrestler_id = $2`, [name, id], (error, results) => {
+    pool.query(WrestlerUpdateQueries.updateWrestlerName, [name, id], (error, results) => {
         if(error) {
             throw error;
         }
