@@ -1,4 +1,5 @@
 const { pool } = require('../Config/db');
+const { WrestlerProfileQueries } = require('../Queries/SelectWrestler');
 
 module.exports.GetAllWrestlers = (req, res) => {
     pool.query(`SELECT * FROM pro_wrestler ORDER BY wrestler_id`, (error, results) => {
@@ -13,7 +14,7 @@ module.exports.GetAllWrestlers = (req, res) => {
 module.exports.GetWrestlerById = (req, res) => {
     const id = parseInt(req.params.id.slice(1));
 
-    pool.query(`SELECT * FROM pro_wrestler WHERE wrestler_id = $1`, [id], (error, results) => {
+    pool.query(WrestlerProfileQueries.getWrestlerById, [id], (error, results) => {
         if(error) {
             throw error;
         }
