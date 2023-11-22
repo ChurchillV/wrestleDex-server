@@ -5,5 +5,45 @@ module.exports.WrestlerUpdateQueries = {
     SET
         wrestler_name = $1 
     WHERE
+        wrestler_id = $2`,
+
+    updateWrestlerPromotion :
+    `UPDATE
+        pro_wrestler
+    SET
+        promotion_id = $1 
+    WHERE
+        wrestler_id = $2`,
+
+    updateWrestlerAllegiance :
+    `UPDATE
+         pro_wrestler
+    SET
+        allegiance_id = $1 
+    WHERE
+        wrestler_id = $2`,
+
+    updateWrestlerStyle :
+    `UPDATE
+        pro_wrestler
+    SET
+        style_id = $1 
+    WHERE
+        wrestler_id = $2`,
+
+    updateWrestlerFinisher :
+    `UPDATE
+         pro_wrestler 
+    SET
+         finisher_id = $1 
+    WHERE
+         wrestler_id = $2`,
+
+    updateWrestlerBio :
+    `UPDATE
+        pro_wrestler 
+    SET
+        bio = $1 
+    WHERE 
         wrestler_id = $2`
 }

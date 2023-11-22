@@ -18,7 +18,7 @@ module.exports.UpdateWrestlerPromotion = (req, res) => {
     const id = parseInt(req.params.id.slice(1));
     const { promotion } = req.body;
 
-    pool.query(`UPDATE pro_wrestler SET promotion_id = $1 WHERE wrestler_id = $2`, [promotion, id], (error, results) => {
+    pool.query(WrestlerUpdateQueries.updateWrestlerPromotion, [promotion, id], (error, results) => {
         if(error) {
             throw error;
         }
@@ -31,7 +31,7 @@ module.exports.UpdateWrestlerAllegiance = (req, res) => {
     const id = parseInt(req.params.id.slice(1));
     const { allegiance } = req.body;
 
-    pool.query(`UPDATE pro_wrestler SET allegiance_id = $1 WHERE wrestler_id = $2`, [allegiance, id], (error, results) => {
+    pool.query(WrestlerUpdateQueries.updateWrestlerAllegiance, [allegiance, id], (error, results) => {
         if(error) {
             throw error;
         }
@@ -44,7 +44,7 @@ module.exports.UpdateWrestlerStyle = (req, res) => {
     const id = parseInt(req.params.id.slice(1));
     const { style } = req.body;
 
-    pool.query(`UPDATE pro_wrestler SET style_id = $1 WHERE wrestler_id = $2`, [style, id], (error, results) => {
+    pool.query(WrestlerUpdateQueries.updateWrestlerStyle, [style, id], (error, results) => {
         if(error) {
             throw error;
         }
@@ -57,7 +57,7 @@ module.exports.UpdateWrestlerFinisher = (req, res) => {
     const id = parseInt(req.params.id.slice(1));
     const { finisher } = req.body;
 
-    pool.query(`UPDATE pro_wrestler SET finisher_id = $1 WHERE wrestler_id = $2`, [finisher, id], (error, results) => {
+    pool.query(WrestlerUpdateQueries.updateWrestlerFinisher, [finisher, id], (error, results) => {
         if(error) {
             throw error;
         }
@@ -70,7 +70,7 @@ module.exports.UpdateWrestlerBio = (req, res) => {
     const id = parseInt(req.params.id.slice(1));
     const { bio } = req.body;
 
-    pool.query(`UPDATE pro_wrestler SET bio = $1 WHERE wrestler_id = $2`, [bio, id], (error, results) => {
+    pool.query(WrestlerUpdateQueries.updateWrestlerBio, [bio, id], (error, results) => {
         if(error) {
             throw error;
         }
