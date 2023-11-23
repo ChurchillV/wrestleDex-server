@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const cors = require('cors');
 require('dotenv').config();
 
 //Environment variables
@@ -12,6 +13,7 @@ const updateWrestlers = require('./Routes/PutRoutes');
 const deleteWrestlers = require('./Routes/DeleteRoutes');
 const postWrestlers = require('./Routes/PostRoutes');
 
+app.use(cors());
 app.use(bodyParser.json())
 app.use(
     bodyParser.urlencoded({
@@ -24,7 +26,7 @@ app.listen(PORT, () => {
 });
 
 // Express request handlers
-app.use('/delete', deleteWrestlers);
+app.use('/', deleteWrestlers);
 app.use('/', getWrestlers);
 app.use('/', updateWrestlers);
 app.use('/', postWrestlers);
