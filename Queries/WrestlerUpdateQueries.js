@@ -7,6 +7,7 @@ module.exports.WrestlerUpdateQueries = {
     WHERE
         wrestler_id = $2`,
 
+
     updateWrestlerPromotion :
     `UPDATE
         pro_wrestler
@@ -14,6 +15,7 @@ module.exports.WrestlerUpdateQueries = {
         promotion_id = $1 
     WHERE
         wrestler_id = $2`,
+
 
     updateWrestlerAllegiance :
     `UPDATE
@@ -23,6 +25,7 @@ module.exports.WrestlerUpdateQueries = {
     WHERE
         wrestler_id = $2`,
 
+
     updateWrestlerStyle :
     `UPDATE
         pro_wrestler
@@ -30,6 +33,7 @@ module.exports.WrestlerUpdateQueries = {
         style_id = $1 
     WHERE
         wrestler_id = $2`,
+
 
     updateWrestlerFinisher :
     `UPDATE
@@ -39,6 +43,7 @@ module.exports.WrestlerUpdateQueries = {
     WHERE
          wrestler_id = $2`,
 
+         
     updateWrestlerBio :
     `UPDATE
         pro_wrestler 

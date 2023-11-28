@@ -9,6 +9,7 @@ module.exports.WrestlerProfileQueries = {
             pro_wrestler.style_id AS wrestler_style,
             pro_wrestler.allegiance_id AS wrestler_allegiance,
             pro_wrestler.promotion_id AS wrestler_promotion,
+            pro_wrestler.image_url AS wrestler_img,
 
             finisher.finisher_id,
             finisher.finisher_name,
@@ -55,6 +56,7 @@ module.exports.WrestlerProfileQueries = {
             pro_wrestler.style_id AS wrestler_style,
             pro_wrestler.allegiance_id AS wrestler_allegiance,
             pro_wrestler.promotion_id AS wrestler_promotion,
+            pro_wrestler.image_url AS wrestler_img,
 
             finisher.finisher_id,
             finisher.finisher_name,
