@@ -50,5 +50,13 @@ module.exports.WrestlerUpdateQueries = {
     SET
         bio = $1 
     WHERE 
-        wrestler_id = $2`
+        wrestler_id = $2`,
+
+    updateWrestlerImg :
+    `UPDATE
+        pro_wrestler 
+    SET
+        image_url = $1 
+    WHERE 
+        wrestler_id = $2`,
 }

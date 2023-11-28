@@ -6,6 +6,7 @@ const {
     UpdateWrestlerStyle,
     UpdateWrestlerFinisher,
     UpdateWrestlerBio,
+    UpdateWrestlerImg,
     } = require('../Controllers/UpdateWrestler');
 
 const router = require('express').Router();
@@ -16,5 +17,6 @@ router.put('/wrestler/allegiance/:id', UpdateWrestlerAllegiance);
 router.put('/wrestler/style/:id', UpdateWrestlerStyle);
 router.put('/wrestler/finisher/:id', UpdateWrestlerFinisher);
 router.put('/wrestler/bio/:id', UpdateWrestlerBio);
+router.put('/wrestler/img/:id', UpdateWrestlerImg);
 
 module.exports = router;

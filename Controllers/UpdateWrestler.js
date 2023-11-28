@@ -78,3 +78,16 @@ module.exports.UpdateWrestlerBio = (req, res) => {
         console.log(`Wrestler ${id} bio updated successfully`);
     });
 }
+
+module.exports.UpdateWrestlerImg = (req, res) => {
+    const id = parseInt(req.params.id.slice(1));
+    const { image_url } = req.body;
+
+    pool.query(WrestlerUpdateQueries.updateWrestlerImg, [image_url, id], (error, results) => {
+        if(error) {
+            throw error;
+        }
+        res.status(200).send(`Wrestler ${id} image_url updated successfully`);
+        console.log(`Wrestler ${id} image_url updated successfully`);
+    });
+}
