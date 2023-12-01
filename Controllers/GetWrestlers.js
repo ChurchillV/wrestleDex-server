@@ -28,3 +28,7 @@ module.exports.GetWrestlerById = (req, res) => {
         }
     })
 }
+
+module.exports.GetWrestlerByName = (req, res) => {
+    
+}
