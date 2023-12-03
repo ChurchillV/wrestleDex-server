@@ -1,5 +1,5 @@
 const { pool } = require('../Config/db');
-const { WrestlerProfileQueries } = require('../Queries/WrestleProfileQueries');
+const { WrestlerProfileQueries } = require('../Queries/Wrestlers/WrestleProfileQueries');
 
 module.exports.GetAllWrestlers = (req, res) => {
     pool.query(WrestlerProfileQueries.getAllWrestlers, (error, results) => {

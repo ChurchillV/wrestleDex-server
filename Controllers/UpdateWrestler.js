@@ -1,5 +1,5 @@
 const { pool } = require('../Config/db');
-const { WrestlerUpdateQueries } = require('../Queries/WrestlerUpdateQueries');
+const { WrestlerUpdateQueries } = require('../Queries/Wrestlers/WrestlerUpdateQueries');
 
 module.exports.UpdateWrestlerName = (req, res) => {
     const id = parseInt(req.params.id.slice(1));

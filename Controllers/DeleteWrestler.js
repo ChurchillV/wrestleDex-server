@@ -1,5 +1,5 @@
 const { pool } = require('../Config/db');
-const { WrestlerDeleteQueries } = require('../Queries/WrestlerDeleteQueries');
+const { WrestlerDeleteQueries } = require('../Queries/Wrestlers/WrestlerDeleteQueries');
 
 module.exports.DeleteWrestler = (req, res) => {
     const id = parseInt(req.params.id.slice(1));

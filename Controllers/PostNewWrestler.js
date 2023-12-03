@@ -1,4 +1,5 @@
 const { pool } = require('../Config/db');
+const { WrestlerPostQueries } = require('../Queries/Wrestlers/WrestlerPostQueries');
 
 module.exports.PostNewWrestler = (req, res) => {
     const {
@@ -12,17 +13,7 @@ module.exports.PostNewWrestler = (req, res) => {
         bio,
     } = req.body;
 
-    pool.query(`INSERT INTO pro_wrestler(
-                 wrestler_id,
-                 wrestler_name,
-                 promotion_id,
-                 gender,
-                 allegiance_id,
-                 style_id,
-                 finisher_id,
-                 bio) VALUES(
-                    $1, $2, $3, $4, $5, $6, $7, $8 
-                 ) RETURNING *`,
+    pool.query(WrestlerPostQueries.addWrestler,
                  [id,
                  name,
                  promotion_id,
