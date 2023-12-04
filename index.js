@@ -12,6 +12,7 @@ const getWrestlers = require('./Routes/GetRoutes');
 const updateWrestlers = require('./Routes/PutRoutes');
 const deleteWrestlers = require('./Routes/DeleteRoutes');
 const postWrestlers = require('./Routes/PostRoutes');
+const getAttributes = require('./Routes/AttributeRoutes');
 
 app.use(cors());
 app.use(bodyParser.json())
@@ -30,3 +31,4 @@ app.use('/', deleteWrestlers);
 app.use('/', getWrestlers);
 app.use('/', updateWrestlers);
 app.use('/', postWrestlers);
+app.use('/', getAttributes);
