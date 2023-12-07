@@ -135,5 +135,11 @@ JOIN
     promotion ON pro_wrestler.promotion_id  = promotion.promotion_id
     
 WHERE 
-    pro_wrestler.wrestler_name ILIKE $1`
+    pro_wrestler.wrestler_name ILIKE $1`,
+
+getWrestlerCount : 
+`SELECT 
+    COUNT(*)
+FROM
+    pro_wrestler`,
 }
