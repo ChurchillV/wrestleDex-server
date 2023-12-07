@@ -8,7 +8,8 @@ module.exports.WrestlerPostQueries = {
         allegiance_id,
         style_id,
         finisher_id,
-        bio) VALUES(
-           $1, $2, $3, $4, $5, $6, $7, $8 
+        bio,
+        image_url) VALUES(
+           $1, $2, $3, $4, $5, $6, $7, $8, $9 
         ) RETURNING *`
 }

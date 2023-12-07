@@ -11,6 +11,7 @@ module.exports.PostNewWrestler = (req, res) => {
         style,
         finisher_id,
         bio,
+        img,
     } = req.body;
 
     pool.query(WrestlerPostQueries.addWrestler,
@@ -21,7 +22,8 @@ module.exports.PostNewWrestler = (req, res) => {
                  allegiance,
                  style,
                  finisher_id,
-                 bio], (error, results) => {
+                 bio,
+                 img], (error, results) => {
                     if(error) {
                         throw error;
                     }
