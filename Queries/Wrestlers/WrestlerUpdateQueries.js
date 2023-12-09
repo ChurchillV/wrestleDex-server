@@ -59,4 +59,14 @@ module.exports.WrestlerUpdateQueries = {
         image_url = $1 
     WHERE 
         wrestler_id = $2`,
+
+    updateWrestlerData :
+    `UPDATE
+        pro_wrestler
+    SET
+        $1
+    WHERE 
+        wrestler_id = $2
+    RETURNING
+        *`,
 }
