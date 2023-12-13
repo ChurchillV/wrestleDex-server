@@ -27,7 +27,8 @@ module.exports.WrestlerProfileQueries = {
 
             promotion.promotion_id,
             promotion.promotion_name,
-            promotion.promotion_owner 
+            promotion.promotion_owner,
+            promotion.abbreviation
             
         FROM 
             pro_wrestler
@@ -74,7 +75,8 @@ module.exports.WrestlerProfileQueries = {
 
             promotion.promotion_id,
             promotion.promotion_name,
-            promotion.promotion_owner 
+            promotion.promotion_owner,
+            promotion.abbreviation 
             
         FROM 
             pro_wrestler
@@ -118,7 +120,8 @@ module.exports.WrestlerProfileQueries = {
 
     promotion.promotion_id,
     promotion.promotion_name,
-    promotion.promotion_owner 
+    promotion.promotion_owner,
+    promotion.abbreviation 
     
 FROM 
     pro_wrestler
