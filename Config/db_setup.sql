@@ -42,6 +42,7 @@ CREATE TABLE pro_wrestler(
 	style_id VARCHAR(4),
 	finisher_id INT,
 	bio VARCHAR(200),
+	image_url VARCHAR(400),
 	FOREIGN KEY(promotion_id) REFERENCES promotion(promotion_id) ON DELETE SET NULL,
 	FOREIGN KEY(allegiance_id) REFERENCES allegiance(allegiance_id) ON DELETE SET NULL,
 	FOREIGN KEY(style_id) REFERENCES wrestling_style(style_id) ON DELETE SET NULL,
