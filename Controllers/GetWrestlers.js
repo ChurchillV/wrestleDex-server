@@ -13,7 +13,7 @@ module.exports.GetAllWrestlers = (req, res) => {
 };
 
 module.exports.GetWrestlerById = (req, res) => {
-    const id = parseInt(req.params.id.slice(1));
+    const id = parseInt(req.params.id);
 
     pool.query(WrestlerProfileQueries.getWrestlerById, [id], (error, results) => {
         if(error) {
