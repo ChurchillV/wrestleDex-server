@@ -1,10 +1,10 @@
 const { pool } = require('../Config/db');
 
 module.exports.UpdateWrestlerData = (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = req.params.id;
     const updatedWrestlerData = req.body;
     const updateFields = Object.keys(updatedWrestlerData).map((key, index) => {
-        return `${key} = $${index + 1}`;
+        return `${key} = $${parseInt(index) + 1}`;
       });
     
     pool.query(`
