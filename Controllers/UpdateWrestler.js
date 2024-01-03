@@ -15,7 +15,7 @@ module.exports.UpdateWrestlerData = (req, res) => {
       wrestler_id = $${Object.keys(updatedWrestlerData).length + 1}
     RETURNING *;
     `,
-
+    
     [...Object.values(updatedWrestlerData), id], (error, results) => {
         if(error) {
             throw error;
